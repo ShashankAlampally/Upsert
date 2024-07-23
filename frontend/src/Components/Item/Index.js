@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import axios from 'axios';
+import './Index.css'
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const Item = (props) => {
@@ -32,14 +33,14 @@ const Item = (props) => {
     return (
         <div>
             <Container fluid>
-                <Row>
-                    <Col md={12} onClick={() => handleClick(product._id)} >
+                <Row >
+                    <Col md={12} onClick={() => handleClick(product._id)} className='mt-5 images' >
                         <div className='d-flex justify-content-center '>
-                            <img src={product.imageUrl} className='w-50 h-50' alt={product.name} />
+                            <img src={product.imageUrl} className='w-50 h-' alt={product.name} />
                         </div>
                         <div className='d-flex flex-column mt-3'>
                             <div className='d-flex flex-row justify-content-center'><h6>{product.name}</h6></div>
-                            <div className='d-flex flex-row justify-content-center'><h2>{product.price}</h2></div>
+                            <div className='d-flex flex-row justify-content-center'><h2>₹{product.price}</h2></div>
                         </div>
                     </Col>
                 </Row>

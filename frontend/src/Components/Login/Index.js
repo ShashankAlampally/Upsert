@@ -23,7 +23,7 @@ const handleSubmit = (e) =>{
             console.log(res.message)
             console.log(res)
             window.sessionStorage.setItem("token",res.data.data.token)
-            window.sessionStorage.setItem("user",res.data.userID)
+            window.sessionStorage.setItem("user",res.data.data.userID)
             Navigate('/shop')
 
         }).catch((error)=>{

@@ -5,6 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import './Index.css'
+import Cart from '../Cart/Index';
 
 const Product = () => {
     const location = useLocation();
@@ -93,11 +95,12 @@ const Product = () => {
 
     return (
         <Container fluid>
-            <Row className='mt-5'>
+            <Cart/>
+            <Row className='mt-5 '>
                 <Col md={12} xl={6} className='d-flex flex-row justify-content-center'>
-                    <img src={product.imageUrl} className='w-50 h-100' alt={product.name} />
+                    <img src={product.imageUrl} className='w-50 h-100 images' alt={product.name} />
                 </Col>
-                <Col md={12} xl={6} className='ml-3 ml-md-0'>
+                <Col md={12} xl={6} className='ml-3 p-3'>
                     <h1>{product.name}</h1>
                     <h2>₹{product.price}</h2>
                     <h2><b>Product Details</b></h2>
@@ -110,19 +113,19 @@ const Product = () => {
                         <li><b>Length</b>: {product.description[5]}</li>
                         <li><b>Country of Origin</b>: {product.description[6]}</li>
                     </ul>
-                    <div className='form-group d-flex flex-row'>
-                        <div className='d-flex flex-column justify-content-center'>
-                            <label htmlFor="inputQuantity" className='form-label col-2'><b>Quantity</b>:</label>
-                        </div>
-                        <div className='col-1 ml-1' style={{ marginLeft: '0.50rem' }}>
+                    <Row className='form-group align-items-center'>
+                        <Col xs={6} md={4} lg={2} className='d-flex flex-column justify-content-center'>
+                            <label htmlFor="inputQuantity" className='form-label'><b>Quantity</b>:</label>
+                        </Col>
+                        <Col xs={6} md={6} lg={3}>
                             <select className='form-control' id='inputQuantity' value={quantity} onChange={handleQuantity}>
                                 {[...Array(5).keys()].map(i => (
                                     <option key={i+1} value={i+1}>{i+1}</option>
                                 ))}
                             </select>
-                        </div>
-                    </div>
-                    <div className='d-flex flex-row justify-content-center'>
+                        </Col>
+                    </Row>
+                    <div className='d-flex flex-row justify-content-center mt-3'>
                         <button type="button" className='btn btn-warning' onClick={addToCart}>Add to Cart</button>
                     </div>
                     {showViewCart && (
