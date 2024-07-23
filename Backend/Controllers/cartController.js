@@ -61,7 +61,7 @@ exports.addToCart = async (req, res) => {
         if (!cart) {
             cart = new Cart({ userID: details.userID, productDetails: [] });
         }
-
+        console.log(cart.productDetails);
         const productIndex = cart.productDetails.findIndex(item => item.productID === details.productDetails.productID);
 
         if (productIndex > -1) {
@@ -174,3 +174,20 @@ exports.checkProductInCart = async (req, res) => {
         res.status(500).send({ message: "An error occurred", error });
     }
 };
+
+exports.cartCount = async(req,res)=>{
+    try {
+        console.log("Cart count");
+        const userID  = req.params.userID;
+        console.log(req.params);
+        if(!userID){
+            res.status(400).send({message :"User not logged in"})
+        }
+        const user = await Cart.findOne({ userID});
+        res.status(200).send({ message :"Cart count" ,data : {count : user.productDetails.length} });
+    } catch (error) {
+        res.status(400).send({error :error.message})
+    }
+    
+
+}
