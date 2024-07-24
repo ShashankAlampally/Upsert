@@ -38,7 +38,8 @@ const CartItem = (props) => {
 
                 <div className="col-12 meta">
                     <b>{name}</b>
-                    <p>Price: ₹{price}</p>
+                    <p className='text-success'>In Stock</p>
+                    <h6>Price: ₹{price}</h6>
                 </div>
                 <div className="col-12 handling d-flex flex-row ">
                     <button onClick={handleDecrease} className='btn btn-secondary'> - </button>

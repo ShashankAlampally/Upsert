@@ -7,7 +7,7 @@ import './Index.css'; // Import custom CSS
 
 const Banner = () => {
     const [data, setData] = useState({
-        imageUrl: "https://as2.ftcdn.net/v2/jpg/01/35/03/19/1000_F_135031985_QuMwgZiWF6hFNS4jGY65gPcKmsd8qym7.jpg",
+        imageUrl: "https://static.vecteezy.com/system/resources/thumbnails/004/299/815/small/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-vector.jpg",
         link: ""
     });
 

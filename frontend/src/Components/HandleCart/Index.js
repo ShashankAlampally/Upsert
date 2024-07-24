@@ -93,14 +93,14 @@ const CartView = () => {
                         )}
                 </div>
                 <div>
-                    <h3>Total Cart Items: {cartItems.length}</h3>
+                    <h5>Total Cart Items: {cartItems.length}</h5>
                 </div>
                 </div>
                 
                 <div className="col-12 col-md-12 col-lg-6 d-flex justify-content-center">
                     <div className="card mt-5 col-12 col-md-12 col-lg-8">
                         <div className="card-header py-3">
-                            <h5 className="mb-0">Summary</h5>
+                            <h3 className="mb-0">Summary</h3>
                         </div>
                         <div className="card-body">
                             <ul className="list-group list-group-flush">
