@@ -10,7 +10,15 @@ const Cart = () => {
   const userID = window.sessionStorage.getItem('user');
   const location = useLocation();
   const navigate = useNavigate();
-
+    useEffect(()=>{
+      axios.get(`http://shashanks-macbook-air.local:8080/api/cartCount/${userID}`, { headers: { "authorization": window.sessionStorage.getItem("token") } })
+            .then((response) => {
+              console.log(response);
+                setTotalItems(response.data.data.count)
+            }).catch((error) => {
+                console.log(error);
+            });
+    })
   const handleClick = () => {
     navigate('/cart');
   };
