@@ -387,3 +387,13 @@ Data fetching and display are handled using React hooks and Axios for making HTT
    - The `totalItems` state variable is dynamically updated with the fetched data and displayed within the cart icon.
 
 This approach ensures that the frontend stays synchronized with the backend data, providing a dynamic and responsive user experience.
+
+
+## Additional Notes
+
+- **Initial Login:** When starting the web application, it directs to the login page. Make sure to sign up first if you don't have an account.
+- **Required Technologies:** Ensure that the device running the web application has all the required technologies installed, including Node.js, MongoDB, and any other dependencies listed in the `package.json` files.
+- **Troubleshooting:** If you encounter any issues or if something doesn't work as expected, please feel free to contact me at shashankalampally143@gmail.com.
+
+These notes should help users get started with the project and address any potential issues they might face during setup and usage.
+
